@@ -1,0 +1,345 @@
+[
+    {
+        "model" : "dr_app.activity",
+        "pk" : 1,
+        "fields" : {
+            "name": "See a Movie",
+            "description": "Go see a new film or a beloved classic at your local movie theater, independent cinema, or drive-in.",
+            "keywords": "Movie Theater OR Cinema OR Drive-In"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 2,
+        "fields" : {
+            "name": "Attend a Concert",
+            "description": "See a gig at your local concert hall. If you don't have one or don't want to see any of the larger touring acts, check out a smaller local venue to hear some of the talented musicians in your area!",
+            "keywords": "Live Music Venue OR Open Mic"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 3,
+        "fields" : {
+            "name": "Visit a Museum or Gallery",
+            "description": "Spend a day seeing the exhibits at your local museum or art gallery.",
+            "keywords": "Museum OR Art Gallery"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 4,
+        "fields" : {
+            "name": "Watch a Sports Game",
+            "description": "Cheer on your favorite team or go see a sport that you know little about to learn how it's played!",
+            "keywords": "Sports Complex OR Stadium OR Arena OR Athletic Field"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 5,
+        "fields" : {
+            "name": "Beach Day",
+            "description": "Grab your swimsuit and sunscreen and spend a day at the Beach. Build a sand castle, go snorkeling, or try your hand at surfing! No Beach nearby? Relax at a local pool for a similar sand-free experience.",
+            "keywords": "Beach OR Pool"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 6,
+        "fields" : {
+            "name": "Target Practice",
+            "description": "Improve your accuracy by visiting your local firearms or archery Range, or check out an axe throwing range for an additional arm workout.",
+            "keywords": "Firearm OR Gun OR Archery OR Axe Throwing OR Shooting Range"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 7,
+        "fields" : {
+            "name": "Visit a Fun Park",
+            "description": "Unleash your inner child at a nearby Amusement Park or Water Park.",
+            "keywords": "Amusement Park OR Water Park"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 8,
+        "fields" : {
+            "name": "Explore the Paranormal",
+            "description": "Investigate the Unexplained on a local ghost tour or see a psychic to have your fortune told. Check out a haunted house for an extra fright when in season! ",
+            "keywords": "Ghost Tour OR Psychic OR Haunted House"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 9,
+        "fields" : {
+            "name": "Try a New Restaurant",
+            "description": "Go to a restaurant you've never been to before or try a new style of cuisine that you've never had. Remember to call ahead in case you need a reservation!",
+            "keywords": "Restaurant"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 10,
+        "fields" : {
+            "name": "Spend time with Animals",
+            "description": "Learn about the creatures of our natural world at your local zoo, aquarium, or educational animal center. No animal attractions near you? Consider visiting a local animal shelter for a tour or volunteer opportunities.",
+            "keywords": "Zoo OR Aquarium OR Safari Park or Animal Shelter "
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 11,
+        "fields" : {
+            "name": "Enjoy the Performing Arts",
+            "description": "Plays, musicals, dance, recitals, magic and more, there's something for everyone at the local performing arts theatre! ",
+            "keywords": "Performing Arts Theatre"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 12,
+        "fields" : {
+            "name": "Try an Adventure Sport",
+            "description": "Skydiving, Bungee Jumping, White Water Rafting, Zip Lining, Scuba Diving there's lots of ways to get an adrenaline rush on an adventure sports tour! Perhaps a little too much of a rush? Try a high ropes course, trampoline park, or indoor rock climbing gym. ",
+            "keywords": ""
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 13,
+        "fields" : {
+            "name": "Climb a Mountain",
+            "description": "Go for a hike and see the world from a birds eye view. Enjoy a seasonal sport at a mountain resort such as Sking, Snowboarding, or Mountain Biking ",
+            "keywords": "Mountain OR Mountain Bike Park OR Ski Resort"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 14,
+        "fields" : {
+            "name": "Camping",
+            "description": "Camping",
+            "keywords": "Camping"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 15,
+        "fields" : {
+            "name": "See a Comedy Show",
+            "description": "Comedy/Improv",
+            "keywords": "Comedy"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 16,
+        "fields" : {
+            "name": "Street Festival",
+            "description": "Street Festival",
+            "keywords": "Street Festival"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 17,
+        "fields" : {
+            "name": "get out on the water",
+            "description": "rent a boat, kayak, canoe",
+            "keywords": "marina"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 18,
+        "fields" : {
+            "name": "dancing",
+            "description": "dancing",
+            "keywords": "dancing"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 19,
+        "fields" : {
+            "name": "escape room",
+            "description": "escape room",
+            "keywords": "escape room"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 20,
+        "fields" : {
+            "name": "mini golf",
+            "description": "mini golf",
+            "keywords": "mini golf"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 21,
+        "fields" : {
+            "name": "Bowling",
+            "description": "bowling",
+            "keywords": "bowling"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 22,
+        "fields" : {
+            "name": "Botanical Garden",
+            "description": "Botanical Garden",
+            "keywords": "Botanical Garden"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 23,
+        "fields" : {
+            "name": "Karaoke",
+            "description": "Karaoke",
+            "keywords": "Karaoke"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 24,
+        "fields" : {
+            "name": "Skating",
+            "description": "Skating, ice skating, rollerblading, skateboarding",
+            "keywords": "Skating"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 25,
+        "fields" : {
+            "name": "Farm",
+            "description": "Farm",
+            "keywords": "Farm"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 26,
+        "fields" : {
+            "name": "Rock Climbing",
+            "description": "Rock Climbing",
+            "keywords": "Rock Climbing"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 27,
+        "fields" : {
+            "name": "Take a Class",
+            "description": "Take a Class",
+            "keywords": "Take a Class"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 28,
+        "fields" : {
+            "name": "Lookout",
+            "description": "Lookout ofr Sunset/Stargazing",
+            "keywords": "Lookout"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 29,
+        "fields" : {
+            "name": "Spa",
+            "description": "Spa",
+            "keywords": "Spa"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 30,
+        "fields" : {
+            "name": "Horseback Riding",
+            "description": "Horseback Riding",
+            "keywords": "Horseback Riding"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 31,
+        "fields" : {
+            "name": "Shopping",
+            "description": "Shopping",
+            "keywords": "Shopping"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 32,
+        "fields" : {
+            "name": "Park",
+            "description": "Park",
+            "keywords": "Park"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 33,
+        "fields" : {
+            "name": "Las Vegas Night",
+            "description": "Last Vegas Night",
+            "keywords": "Casino"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 34,
+        "fields" : {
+            "name": "Drinking",
+            "description": "Brewery/Winery",
+            "keywords": "Brewery/Winery"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 35,
+        "fields" : {
+            "name": "Smoke",
+            "description": "Cigar, Hookah, Dispensary",
+            "keywords": "Smoke"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 36,
+        "fields" : {
+            "name": "Local Bar",
+            "description": "Trivia night, pool, darts, bar crawl, speakeasy",
+            "keywords": "Bar"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 37,
+        "fields" : {
+            "name": "Take to the Skies",
+            "description": "Helicopter tour, hot air balloon",
+            "keywords": "Sky Tour"
+        }
+    },
+    {
+        "model" : "dr_app.activity",
+        "pk" : 38,
+        "fields" : {
+            "name": "Stay In for Takeout",
+            "description": "Stay in Night, takeout and streaming, video games, board game, or reading",
+            "keywords": "Takeout"
+        }
+    }
+
+]
