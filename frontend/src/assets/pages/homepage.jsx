@@ -1,4 +1,5 @@
 import ActivityWheel from "../components/ActivityWheel"
+import Map from "../components/Map"
 
 
 function Homepage() {
@@ -7,10 +8,9 @@ function Homepage() {
         <div className="homepage">
             <b><h1 id="title1">Welcome to</h1></b>
             <b><h1 id="title2">Date Roulette!</h1></b>
-            <h1 id="subtitle">Click the Spin Button Below to Generate</h1>
+            <h1 id="subtitle">Click the Button Below to Generate</h1>
             <h1 id="subtitle">an Activity for your Date Night!</h1>
             <ActivityWheel />
-
         </div>
     )
 }

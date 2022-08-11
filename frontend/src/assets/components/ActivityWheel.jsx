@@ -131,8 +131,9 @@ function ActivityWheel() {
                 <Link to="activitymap">Accept</Link>
             </button>
             <button id="respin" onClick={handleSpinClick}>RE-SPIN</button>
-            {/* <Link to="activities">Activities</Link>
-            <Link to="activities/prizeId">Activities</Link> */}
+            <br />
+            <Link to="activities">Activities</Link>
+            {/* <Link to="activities/prizeId">Activities</Link> */}
 
         </div>
     )

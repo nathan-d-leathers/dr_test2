@@ -49,7 +49,6 @@ body {
 #subtitle {
   font-family: "Pinyon Script";
   font-weight:700;
-  color: goldenrod;
   /* margin: 0; */
 }
 
@@ -171,5 +170,18 @@ button:focus-visible {
   z-index: 10;
   font-family: "Gambler";
   font-size: 395%;
+  color: goldenrod;
+}
+
+
+.MapBox {
+  border: 14px solid goldenrod;
+  border-radius: 2%;
+}
+
+#mapTitle {
+  font-family: "Pinyon Script";
+  font-size: 300%;
+  margin-bottom: 5%;
   color: goldenrod;
 }

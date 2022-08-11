@@ -35,11 +35,11 @@ function ActivityList() {
         <div>
             <div>
                 <h4>Here's my List of Activities</h4>
-                {activities.map(({ name, description, searchTerms, }) => <div onClick={(name) => handleActivityClick(activity_id)}>
+                {activities.map(({ name, description, keywords }) => <div onClick={(name) => handleActivityClick(activity_id)}>
                     <p>Name: {name}</p>
                     <p>Description: {description}</p>
                     <br />
-                    <p>Search Terms: {searchTerms}</p>
+                    <p>Search Terms: {keywords}</p>
                     <hr />
                 </div>
                 )}
