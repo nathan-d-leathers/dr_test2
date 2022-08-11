@@ -10,6 +10,7 @@ function Homepage() {
             <h1 id="subtitle">Click the Spin Button Below to Generate</h1>
             <h1 id="subtitle">an Activity for your Date Night!</h1>
             <ActivityWheel />
+
         </div>
     )
 }

@@ -4,7 +4,7 @@ import './App.css'
 import { HashRouter, Routes, Route } from "react-router-dom"
 import Homepage from './assets/pages/homepage'
 import React from 'react'
-// import Mappage from './assets/pages/mappage'
+import Mappage from './assets/pages/mappage'
 
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
       <HashRouter>
         <Routes>
           <Route path='/' element={<Homepage />} />
-          {/* <Route path='/activitymap' element={<Mappage />} /> */}
+          <Route path='/activitymap' element={<Mappage />} />
           {/* <Route path='/activities' element={<ActivityList />} />
           <Route path='/activities/prizeId' element={<Activity />} /> */}
         </Routes>
