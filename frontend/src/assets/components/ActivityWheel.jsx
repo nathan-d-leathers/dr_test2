@@ -61,40 +61,6 @@ function ActivityWheel() {
         spinCount += 1;
     }
 
-    // trying to get actvity id
-    // const [activity, setActivity] = useState(null)
-    // const [activity_id, setActivityId] = useState(null)
-
-    // function retrieveId(prizeNumber) {
-    //     useEffect(() => {
-    //         axios
-    //             .get(`/activities/${prizeNumber}`)
-    //             .then((response) => {
-    //                 const activityFields = response.data[0].fields;
-    //                 const activityIds = response.data[0].pk;
-    //                 console.log(activityFields)
-    //                 console.log(activityIds)
-    //                 setActivity(activityFields)
-    //                 setActivityId(activityIds)
-
-    //             })
-    //     }, [])
-    // }
-
-    {/* <div>
-                {activity &&
-                    <div>
-                        <h4>Heres Your Activity!</h4>
-                        <h2>{activity.name}</h2>
-                        <h3>{activity.description}</h3>
-                        <br />
-                        <p>These are the search terms I will pass into Google Maps:</p>
-                        <h5>{activity.searchTerms}</h5>
-                    </div>
-                }
-            </div> */}
-
-
     return (
         <div>
             <div className='prizeWheelBox'>

@@ -6,8 +6,6 @@ import { useCallback, useState, useRef } from 'react'
 import {
     GoogleMap,
     useLoadScript,
-    // Marker,
-    // InfoWindow, only needed for marker location
 } from "@react-google-maps/api"
 
 
@@ -16,6 +14,7 @@ import usePlacesAutocomplete, {
     getGeocode,
     getLatLng,
 } from "use-places-autocomplete"
+
 
 // // // import Combo Box for Search Results List
 import {
@@ -38,7 +37,7 @@ import mapStyles from '../../mapStyles';
 
 
 // Not Sure if Nessacary
-// import { ClearSuggestions } from 'use-places-autocomplete'; not working/supported?
+import { clearSuggestions } from 'use-places-autocomplete';
 // require('dotenv').config()
 
 // import { Circle } from '@react-google-maps/api';
@@ -72,60 +71,45 @@ function Map() {
 
     // hooks
 
-    // for settign a map marker
-    // const [markers, setMarkers] = useState([])
-    // for selecting a spot on map
-    // const [selected, setSelected] = useState(null)
-
-
     // script that loads Google Maps into App
     const { isLoaded, loadError } = useLoadScript({
-
-        // -=-= A D D   A P I   K E Y  T 0   B A C K E N D -=-=-=-=
-        libraries,
+        googleMapsApiKey:
+            // -=-= A D D   A P I   K E Y  T 0   B A C K E N D -=-=-=-=
+            libraries,
     });
 
     // logic helpers
 
+    function Locate({ panTo }) {
+        return (
+            <button className='locate'
+                onClick={() => {
+                    navigator.geolocation.getCurrentPosition(
+                        (position) => {
+                            panTo({
+                                lat: position.coords.latitude,
+                                lng: position.coords.longitude,
+                            });
+                        },
+                        () => null
+                    );
+                }}
+            >
+                Geolocate
+            </button>
+        )
+    }
 
-    // Set Marker logic that prevents multiple renderings
-    // const onMapClick = useCallback((event) => {
-    //     setMarkers((current) => [
-    //         ...current,
-    //         {
-    //             lat: event.latlng.lat(),
-    //             lng: event.latlng.lng(),
-    //             // time: new Date(),
-    //         }
-    //     ])
-    // }, [])
+    const mapRef = React.useRef();
 
+    const onMapLoad = React.useCallback((map) => {
+        mapRef.current = map;
+    }, []);
 
-    // finds location on map and repositions center
-    // function Locate({ reposition }) {
-    //     return <button className="locate" onClick={() => {
-    //         navigator.geolocation.getCurrentPosition((position) => {
-    //             reposition({
-    //                 lat: position.coords.latitude,
-    //                 lng: position.coords.longitude,
-    //             });
-    //         }, () => null);
-    //     }}>Use My Location
-    //         {/* <img src="../assets/heart_logo.png" alt='Home-Locate Me' /> */}
-    //     </button>
-    // }
-
-
-    // const mapRef = useRef();
-    // const onMapLoad = useCallback((map) => {
-    //     mapRef.current = map
-    // }, [])
-
-    // respostion map center over address entered
-    // const reposition = useCallback(({ lat, lng }) => {
-    //     mapRef.current.reposition({ lat, lng });
-    //     mapRef.current.setZoom(15);
-    // }, [])
+    const panTo = React.useCallback(({ lat, lng }) => {
+        mapRef.current.panTo({ lat, lng });
+        mapRef.current.setZoom(12);
+    }, []);
 
     // Display message for rendering Map
     if (loadError) return "Error Loading Maps"
@@ -135,101 +119,72 @@ function Map() {
 
     // actual HTML to be displayed on page
     return (
-        <div className="App">
-            <GoogleMap
-                mapContainerStyle={mapContainerStyle}
-                zoom={13}
-                center={center}
-                options={options}
-            // onLoad={onMapLoad}
-            >
-                {/* // onCLick={onMapClick}
-            // old way below?
-            // onClick={(event) => { 
-            //   setMarkers(current => [...current, {
-            //     // problrem with latlng
-            //     lat: event.latlng.lat(),
-            //     lng: event.latlng.lng(),
-            //     time: new Date(),
-            //   },
-            //   ]);
-            // }}
-            >
-                {/* {markers.map((marker) => (
-              < Marker
-                key={marker.time.toISOString()}
-                position={{ lat: marker.lat, lng: marker.lng }}
-                onClick={() => {
-                  setSelected(marker);
-                }}
-                icon={{
-                  url: `../assets/heart_logo.png`,
-                  origin: new window.google.maps.Point(0, 0),
-                  anchor: new window.google.maps.Point(15, 15),
-                  scaledSize: new window.google.maps.Size(30, 30),
-                }}
-              />
-            ))} */}
-
-                {/* <Circle center={center} radius={1000} /> */}
-            </GoogleMap>
-            {/* <hr />
-            <Search reposition={reposition} />
-            <Locate reposition={reposition} />
-            <br /> */}
-        </div >
+        <div>
+            <Locate panTo={panTo} />
+            <div className="App">
+                <Search panTo={panTo} />
+                <GoogleMap
+                    mapContainerStyle={mapContainerStyle}
+                    zoom={14}
+                    center={center}
+                    options={options}
+                    onLoad={onMapLoad}
+                >
+                </GoogleMap>
+            </div >
+        </div>
     )
 }
 
-// // function for Search Bar on Map (with Google auto complete for addresses)
-// function Search(reposition) {
-//     const { ready, value,
-//         suggestions: { status, data },
-//         setValue,
-//     } = usePlacesAutocomplete({
-//         requestOptions: {
-//             location: { lat: () => 32.715736, lng: () => -117.161087 },
-//             // radius is in meters (this will show 5km)
-//             radius: 5 * 1000
-//         }
-//     })
+// function for Search Bar on Map (with Google auto complete for addresses)
+function Search({ panTo }) {
+    const {
+        ready,
+        value,
+        suggestions: { status, data },
+        setValue,
+        clearSuggestions,
+    } = usePlacesAutocomplete({
+        requestOptions: {
+            location: { lat: () => 41.879930, lng: () => -87.630710 },
+            // radius is in meters (this will show 5km)
+            radius: 5 * 1000
+        },
+    });
 
-//     return (
-//         <div className='search'>
-//             <Combobox aria-label="Location Suggestions"
-//                 onSelect={async (address) => {
-//                     setValue(address, false);
-//                     // clearSuggestion();
-//                     // not working
-//                     try {
-//                         const results = await getGeocode({ address });
-//                         const { lat, lng } = await getLatLng(results[0]);
-//                         console.log({ lat, lng });
-//                         // Error Here: Code retrieves correct lat,lng but will not use repostion function
-//                         reposition({ lat, lng });
-//                     } catch (error) {
-//                         console.log("error!")
-//                         // console.log(address)
-//                     }
+    return (
+        <div className='search'>
+            <Combobox
+                onSelect={async (address) => {
+                    setValue(address, false);
+                    clearSuggestions();
+                    try {
+                        const results = await getGeocode({ address });
+                        const { lat, lng } = await getLatLng(results[0]);
+                        console.log({ lat, lng });
+                        panTo({ lat, lng });
+                    } catch (error) {
+                        console.log("error!")
+                    }
 
-//                 }}
-//             >
-//                 <ComboboxInput value={value} onChange={(e) => {
-//                     setValue(e.target.value)
-//                 }}
-//                     disabled={!ready}
-//                     placeholder="Enter an address"
-//                 />
-//                 <ComboboxPopover>
-//                     <ComboboxList>
-//                         {status == "OK" && data.map(({ id, description }) => (
-//                             <ComboboxOption key={id} value={description} />
-//                         ))}
-//                     </ComboboxList>
-//                 </ComboboxPopover>
-//             </Combobox>
-//         </div>
-//     )
-// }
+                }}
+            >
+                <ComboboxInput value={value} onChange={(e) => {
+                    setValue(e.target.value)
+                }}
+                    disabled={!ready}
+                    placeholder="Enter an address"
+                />
+                <ComboboxPopover>
+                    <ComboboxList>
+                        {status == "OK" && data.map(({ id, description }) => (
+                            <ComboboxOption key={id} value={description} />
+                        ))}
+                    </ComboboxList>
+                </ComboboxPopover>
+            </Combobox>
+        </div>
+    )
+}
 
 export default Map
