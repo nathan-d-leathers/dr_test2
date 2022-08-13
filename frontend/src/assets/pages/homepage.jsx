@@ -1,8 +1,8 @@
 import ActivityWheel from "../components/ActivityWheel"
-import Map from "../components/Map"
+// import Map from "../components/Map"
 
 
-function Homepage() {
+function Homepage(props) {
 
     return (
         <div className="homepage">
@@ -10,17 +10,14 @@ function Homepage() {
             <b><h1 id="title2">Date Roulette!</h1></b>
             <h1 id="subtitle">Click the Button Below to Generate</h1>
             <h1 id="subtitle">an Activity for your Date Night!</h1>
-            <ActivityWheel />
+            <ActivityWheel
+                wheeldata={props.wheeldata}
+                mustSpin={props.mustSpin}
+                prizeNumber={props.prizeNumber}
+                handleSpinClick={props.handleSpinClick}
+            />
         </div>
     )
 }
 
 export default Homepage
-
-
-
-// ##################################################################
-
-// Problem lies with my roulette wheel dependencies
-
-// ##################################################################
