@@ -40,6 +40,9 @@ import mapStyles from '../../mapStyles';
 import { clearSuggestions } from 'use-places-autocomplete';
 // require('dotenv').config()
 
+import homeheart from "../../assets/homeheart.png"
+
+
 // import { Circle } from '@react-google-maps/api';
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
@@ -82,7 +85,7 @@ function Map() {
 
     function Locate({ panTo }) {
         return (
-            <button className='locate'
+            <img id="house" src={homeheart} alt="Geolocate"
                 onClick={() => {
                     navigator.geolocation.getCurrentPosition(
                         (position) => {
@@ -94,9 +97,7 @@ function Map() {
                         () => null
                     );
                 }}
-            >
-                Geolocate
-            </button>
+            />
         )
     }
 
@@ -119,7 +120,7 @@ function Map() {
 
     // actual HTML to be displayed on page
     return (
-        <div>
+        <div className='MapBox'>
             <Locate panTo={panTo} />
             <div className="App">
                 <Search panTo={panTo} />

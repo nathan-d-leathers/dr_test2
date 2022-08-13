@@ -48,7 +48,7 @@ function ActivityWheel() {
         { option: '0', style: { backgroundColor: 'green', textColor: 'black' } },
     ]
 
-    let spinCount = 0;
+    // let spinCount = 0;
 
     const [mustSpin, setMustSpin] = useState(false);
     const [prizeNumber, setPrizeNumber] = useState(0);
@@ -58,7 +58,7 @@ function ActivityWheel() {
         setPrizeNumber(newPrizeNumber)
         setMustSpin(true)
         console.log(prizeNumber)
-        spinCount += 1;
+        // spinCount += 1;
     }
 
     return (
