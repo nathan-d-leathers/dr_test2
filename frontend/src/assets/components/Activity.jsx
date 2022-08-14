@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+// import { useParams } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
-function Activity() {
+function Activity(props) {
+    const id = props.prizeNumber
 
     const [activity, setActivity] = useState(null)
     const [activity_id, setActivityId] = useState(null)

@@ -1,7 +1,7 @@
 import Map from "../components/Map"
 
-function Mappage() {
-    // working default code
+function Mappage(props) {
+
     return (
         <div className="mappage">
             <div id="mapTitle">Select the Location for your Date Below!</div>
@@ -15,3 +15,7 @@ function Mappage() {
 }
 
 export default Mappage
+
+
+
+
