@@ -13,7 +13,7 @@
 
 #signup{
   margin-right: 2%;
-
+  color: black, important !important;
 }
 
 #login{
@@ -23,6 +23,15 @@
 
 #welcome{
   font-family: "Gambler";
+}
+
+
+#homebutton {
+margin-right: 50%;
+}
+
+#logout {
+ 
 }
 /* .locate img {
   width: 30px;
@@ -54,6 +63,7 @@ body {
   font-size: 3.8em;
   line-height: 0;
   font-family: "Gambler";
+  margin-top: 15%;
   /* margin: 0; */
 }
 
@@ -190,6 +200,16 @@ button:focus-visible {
   color: goldenrod;
 }
 
+#pointer {
+  position:absolute;
+  right: 3.5%;
+  top: 7.5%;
+  max-width: 60px;
+  height: auto;
+  transform: rotate(-.025turn);
+  z-index: 10;
+
+}
 
 .MapBox {
   border: 14px solid goldenrod;

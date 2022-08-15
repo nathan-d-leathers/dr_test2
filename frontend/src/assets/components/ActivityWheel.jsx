@@ -3,6 +3,7 @@ import { Wheel } from "react-custom-roulette";
 import { Link } from "react-router-dom";
 // import Activity from "./Activity";
 import ActivityList from "../pages/ActivityList";
+import pointer from "../pointer.webp"
 
 function ActivityWheel(props) {
 
@@ -10,6 +11,7 @@ function ActivityWheel(props) {
         <div>
             <div className='prizeWheelBox'>
                 <p id="logo">DR</p>
+                <img src={pointer} id="pointer" />
                 <Wheel
                     mustStartSpinning={props.mustSpin}
                     prizeNumber={props.prizeNumber}

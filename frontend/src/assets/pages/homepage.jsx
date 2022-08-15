@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Wheelpage from "./wheelpage";
-import loveheart from "../loveheart.png"
+// import loveheart from "../loveheart.png"
 
 function Homepage(props) {
 
@@ -16,8 +16,18 @@ function Homepage(props) {
                 <input type="submit" />
                 <br />
             </form> */}
-            <button id="signup" onClick={props.submitSignupForm}>Sign Up</button>
-            <button id="login" onClick={props.submitLoginForm}>Log In</button>
+            <button id="signup"
+                user={props.user}
+                setUser={props.setUser}
+            >
+                <a href="#/signup">Sign Up</a>
+            </button>
+            <button id="login"
+                user={props.user}
+                setUser={props.setUser}
+            >
+                <a href="#/login">Log In</a>
+            </button>
             {/* <button id="logout" onClick={props.logOut}>Log Out</button> */}
             <br />
             <Link to="wheelpage">Lets Plan a Date!</Link>

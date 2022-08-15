@@ -1,6 +1,7 @@
 import ActivityWheel from "../components/ActivityWheel"
 import { useCallback, useState, useRef } from 'react'
 import Activity from "../components/Activity";
+import { Link } from "react-router-dom"
 
 function Wheelpage(props) {
 
@@ -65,7 +66,7 @@ function Wheelpage(props) {
     }
 
     return (
-        <div className="homepage">
+        <div className="wheelpage">
             <b><h1 id="title1">Welcome to</h1></b>
             <b><h1 id="title2">Date Roulette!</h1></b>
             <h1 id="subtitle">Click the Button Below to Generate</h1>
@@ -85,6 +86,12 @@ function Wheelpage(props) {
                     showSpinResults={showSpinResults}
                 />
             }
+            <div>
+                <button id="homebutton">
+                    <Link to="/">Home</Link>
+                </button>
+                <button id="logout" onClick={props.logOut}>Log Out</button>
+            </div>
         </div>
     )
 }

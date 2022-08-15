@@ -8,6 +8,9 @@ import ActivityList from './assets/pages/ActivityList'
 import Wheelpage from './assets/pages/wheelpage'
 // import Activity from './assets/components/Activity'
 import axios from 'axios'
+import SignUp from './assets/pages/signup'
+import LogIn from './assets/pages/login'
+// import home from './assets/home.png'
 
 
 const getCSRFToken = () => {
@@ -49,33 +52,8 @@ function App() {
   // axios.defaults.headers.common['X-CSRFToken'] = getCSRFToken()
 
 
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
   const [user, setUser] = useState(null)
-
-  const submitSignupForm = function (event) {
-    // this isn't actually necessary, since this isn't in a form. but if it WAS a form, we'd need to prevent default.
-    event.preventDefault()
-    const emailInput = event.target.email;
-    const passwordInput = event.target.password;
-
-    axios.post('/signup/', {
-      email: emailInput,
-      password: passwordInput
-    })
-      .then((response) => {
-        console.log('response from server: ', response)
-        // window.location.reload()
-      })
-  }
-
-  const submitLoginForm = function (event) {
-    // this isn't actually necessary, since this isn't in a form. but if it WAS a form, we'd need to prevent default.
-    event.preventDefault()
-    axios.post('/login', { email: 'jeff@amazon.com', password: 'dragons' }).then((response) => {
-      console.log('response from server: ', response)
-      window.location.reload()
-    })
-  }
 
   const logOut = function (event) {
     // this isn't actually necessary, since this isn't in a form. but if it WAS a form, we'd need to prevent default.
@@ -125,17 +103,22 @@ function App() {
 
   return (
     <div className='App'>
+      {/* <img class="homebutton" src={home} onClick="/" /> */}
       <br />
       <HashRouter>
         <Routes>
           <Route path="/" element={<Homepage
-            submitSignupForm={submitSignupForm}
-            submitLoginForm={submitLoginForm}
+            user={user}
+            setUser={setUser}
+            // submitLoginForm={submitLoginForm}
             logOut={logOut}
           />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route path='/wheelpage' element={<Wheelpage
             activity={activity}
             setActivity={setActivity}
+            logOut={logOut}
           />} />
           <Route path='/wheelpage/activitymap' element={<Mappage
           />} />
