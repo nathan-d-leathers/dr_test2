@@ -1,174 +1,133 @@
 import React from 'react'
 import './App.css'
 import { HashRouter, Routes, Route } from "react-router-dom"
-// import React from 'react';
-// // import Hooks
-// import { useCallback, useState, useRef } from 'react'
-
-// // import Google Maps
-// import {
-//   // GoogleMap,
-//   // useLoadScript,
-// } from "@react-google-maps/api"
-
-
-// import for Geolocating and Search Bar suggestions
-// import usePlacesAutocomplete, {
-//   getGeocode,
-//   getLatLng,
-// } from "use-places-autocomplete"
-
-
-// // // import Combo Box for Search Results List
-// import {
-//   Combobox,
-//   ComboboxInput,
-//   ComboboxPopover,
-//   ComboboxList,
-//   ComboboxOption
-// } from "@reach/combobox"
-
-// // // Import Combobox CSS
-// import "@reach/combobox/styles.css";
-
-// // Custom Map Styling
-// import mapStyles from './mapStyles'
-
-// // import App related CSS
-// import './App.css'
-
-// Not Sure if Nessacary
-// import { clearSuggestions } from 'use-places-autocomplete';
+import { useEffect, useState } from 'react'
 import Homepage from './assets/pages/homepage'
 import Mappage from './assets/pages/mappage'
 import ActivityList from './assets/pages/ActivityList'
+import Activity from './assets/components/Activity'
+import axios from 'axios'
 
-// import homeheart from "./assets/homeheart.png"
+
+const getCSRFToken = () => {
+  let csrfToken
+
+  // the browser's cookies for this page are all in one string, separated by semi-colons
+  const cookies = document.cookie.split(';')
+  for (let cookie of cookies) {
+    // individual cookies have their key and value separated by an equal sign
+    const crumbs = cookie.split('=')
+    if (crumbs[0].trim() === 'csrftoken') {
+      csrfToken = crumbs[1]
+    }
+  }
+  return csrfToken
+}
+console.log('token? ', getCSRFToken())
+axios.defaults.headers.common['X-CSRFToken'] = getCSRFToken()
 
 function App() {
 
-  // -=-=-=-=-=-=-=-=-=-=-=- WHEEL FUNCTIONALITY =-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+  // -=-=-=-=-=-=-=-=-=-=-=-=- USER FUNCTIONALITY =-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+  // forms
+  // const getCSRFToken = () => {
+  //   let csrfToken
 
-  // const wheeldata = [
-  //   // 38 options, ordered in the style of traditional american roulette wheels
-  //   { option: '28', style: { backgroundColor: 'black', textColor: 'white' } },
-  //   { option: '9', style: { backgroundColor: 'red', textColor: 'black' } },
-  //   { option: '26', style: { backgroundColor: 'black', textColor: 'white' } },
-  //   { option: '30', style: { backgroundColor: 'red', textColor: 'black' } },
-  //   { option: '11', style: { backgroundColor: 'black', textColor: 'white' } },
-  //   { option: '7', style: { backgroundColor: 'red', textColor: 'black' } },
-  //   { option: '20', style: { backgroundColor: 'black', textColor: 'white' } },
-  //   { option: '32', style: { backgroundColor: 'red', textColor: 'black' } },
-  //   { option: '17', style: { backgroundColor: 'black', textColor: 'white' } },
-  //   { option: '5', style: { backgroundColor: 'red', textColor: 'black' } },
-  //   { option: '22', style: { backgroundColor: 'black', textColor: 'white' } },
-  //   { option: '34', style: { backgroundColor: 'red', textColor: 'black' } },
-  //   { option: '15', style: { backgroundColor: 'black', textColor: 'white' } },
-  //   { option: '3', style: { backgroundColor: 'red', textColor: 'black' } },
-  //   { option: '24', style: { backgroundColor: 'black', textColor: 'white' } },
-  //   { option: '36', style: { backgroundColor: 'red', textColor: 'black' } },
-  //   { option: '13', style: { backgroundColor: 'black', textColor: 'white' } },
-  //   { option: '1', style: { backgroundColor: 'red', textColor: 'black' } },
-  //   { option: '00', style: { backgroundColor: 'green', textColor: 'black' } },
-  //   { option: '27', style: { backgroundColor: 'red', textColor: 'black' } },
-  //   { option: '10', style: { backgroundColor: 'black', textColor: 'white' } },
-  //   { option: '25', style: { backgroundColor: 'red', textColor: 'black' } },
-  //   { option: '29', style: { backgroundColor: 'black', textColor: 'white' } },
-  //   { option: '12', style: { backgroundColor: 'red', textColor: 'black' } },
-  //   { option: '8', style: { backgroundColor: 'black', textColor: 'white' } },
-  //   { option: '19', style: { backgroundColor: 'red', textColor: 'black' } },
-  //   { option: '31', style: { backgroundColor: 'black', textColor: 'white' } },
-  //   { option: '18', style: { backgroundColor: 'red', textColor: 'black' } },
-  //   { option: '6', style: { backgroundColor: 'black', textColor: 'white' } },
-  //   { option: '21', style: { backgroundColor: 'red', textColor: 'black' } },
-  //   { option: '33', style: { backgroundColor: 'black', textColor: 'white' } },
-  //   { option: '16', style: { backgroundColor: 'red', textColor: 'black' } },
-  //   { option: '4', style: { backgroundColor: 'black', textColor: 'white' } },
-  //   { option: '23', style: { backgroundColor: 'red', textColor: 'black' } },
-  //   { option: '35', style: { backgroundColor: 'black', textColor: 'white' } },
-  //   { option: '14', style: { backgroundColor: 'red', textColor: 'black' } },
-  //   { option: '2', style: { backgroundColor: 'black', textColor: 'white' } },
-  //   { option: '0', style: { backgroundColor: 'green', textColor: 'black' } },
-  // ]
-
-  // const [mustSpin, setMustSpin] = useState(false);
-  // const [prizeNumber, setPrizeNumber] = useState(0);
-
-  // const handleSpinClick = () => {
-  //   const newPrizeNumber = Math.floor(Math.random() * wheeldata.length)
-  //   setPrizeNumber(newPrizeNumber)
-  //   setMustSpin(true)
-  //   console.log(prizeNumber)
+  //   // the browser's cookies for this page are all in one string, separated by semi-colons
+  //   const cookies = document.cookie.split(';')
+  //   for (let cookie of cookies) {
+  //     // individual cookies have their key and value separated by an equal sign
+  //     const crumbs = cookie.split('=')
+  //     if (crumbs[0].trim() === 'csrftoken') {
+  //       csrfToken = crumbs[1]
+  //     }
+  //   }
+  //   return csrfToken
   // }
-
-  // const onStopSpinning = () => {
-  //   setMustSpin(false)
-  // }
+  // console.log('token? ', getCSRFToken())
+  // axios.defaults.headers.common['X-CSRFToken'] = getCSRFToken()
 
 
-  // -=-=-=-=-=-=-=-=-=-=-=- WHEEL FUNCTIONALITY =-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+  const [count, setCount] = useState(0)
+  const [user, setUser] = useState(null)
 
-  // -=-=-=-=-=-=-=-=-=-=-=-=- MAP FUNCTIONALITY =-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+  const submitSignupForm = function (event) {
+    // this isn't actually necessary, since this isn't in a form. but if it WAS a form, we'd need to prevent default.
+    event.preventDefault()
+    axios.post('/signup/', { email: 'jeff@amazon.com', password: 'dragons' }).then((response) => {
+      console.log('response from server: ', response)
+      // window.location.reload()
+    })
+  }
 
-  // // Variable to find a location in Google Places
-  // // const libraries = ["places"]
+  const submitLoginForm = function (event) {
+    // this isn't actually necessary, since this isn't in a form. but if it WAS a form, we'd need to prevent default.
+    event.preventDefault()
+    axios.post('/login', { email: 'jeff@amazon.com', password: 'dragons' }).then((response) => {
+      console.log('response from server: ', response)
+      window.location.reload()
+    })
+  }
 
-  // // Sizes the map
-  // const mapContainerStyle = {
-  //   width: "700px",
-  //   height: "700px",
-  // }
+  const logOut = function (event) {
+    // this isn't actually necessary, since this isn't in a form. but if it WAS a form, we'd need to prevent default.
+    event.preventDefault()
+    axios.post('/logout').then((response) => {
+      console.log('response from server: ', response)
+      whoAmI()
+    })
+  }
 
-  // // Adds a default center to map on load (Default: Code Platoon HQ, Chicago IL)
-  // const center = {
-  //   lat: 41.879930,
-  //   lng: -87.630710,
-  // }
+  const whoAmI = async () => {
+    const response = await axios.get('/whoami')
+    const user = response.data && response.data[0] && response.data[0].fields
+    // const user = response.data[0].fields
+    console.log('user from whoami? ', user, response)
+    setUser(user)
+    window.foo.bar.baz = 'error!'
+  }
 
-  // // customizes my Map style and widgets
-  // const options = {
-  //   styles: mapStyles,
-  //   disableDefaultUI: true,
-  //   zoomControl: true,
-  //   scaleControl: true,
-  // }
+  useEffect(() => {
+    whoAmI()
+  }, [])
 
-  // // script that loads Google Maps into App
+  // return html:
 
-  // const mapRef = useRef();
+  {/* <div>
+        <h1>Welcome to the Date Roulette</h1>
+        <h4>{process.env.REACT_APP_GOOGLE_MAPS_API_KEY}</h4> 
+        {user && <p>Welcome, {user.email}</p>}
+        <button id="signup" onClick={submitSignupForm}>Sign Up</button>
+        <button id="login" onClick={submitLoginForm}>Log In</button>
+        <button id="logout" onClick={logOut}>Log Out</button>
+       <button onClick={ActivityList}>Show Activities</button>
+      </div>  */}
+  {/* <Route path='/' element={<Homepage
+          // submitSignupForm={submitSignupForm}
+          // submitLoginForm={submitLoginForm}
+          // logOut={logOut}
+          />} /> */}
 
-  // const onMapLoad = useCallback((map) => {
-  //   mapRef.current = map;
-  // }, []);
+  // -=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-  // const panTo = useCallback(({ lat, lng }) => {
-  //   mapRef.current.panTo({ lat, lng });
-  //   mapRef.current.setZoom(12);
-  // }, []);
-
-
-
-
-  // -=-=-=-=-=-=-=-=-=-=-=-=- MAP FUNCTIONALITY =-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-
-
-
+  // // Activity Functionality
+  // const [activity, setActivity] = useState(null)
 
 
   return (
     <div className='App'>
+      <button id="signup" onClick={submitSignupForm}>Sign Up</button>
+      <button id="login" onClick={submitLoginForm}>Log In</button>
+      <button id="logout" onClick={logOut}>Log Out</button>
+      <br />
       <HashRouter>
         <Routes>
           <Route path='/' element={<Homepage
-          // wheeldata={wheeldata}
-          // mustSpin={mustSpin}
-          // prizeNumber={prizeNumber}
-          // handleSpinClick={handleSpinClick}
-          // onStopSpinning={onStopSpinning}
           />} />
-          <Route path='/activitymap' element={<Mappage />} />
+          <Route path='/activitymap' element={<Mappage
+          />} />
           <Route path='/activities' element={<ActivityList />} />
-          {/* <Route path='/activities/prizeId' element={<Activity />} /> */}
+          {/* <Route path='/activities/:id' element={<Activity />} /> */}
         </Routes>
       </HashRouter>
     </div>

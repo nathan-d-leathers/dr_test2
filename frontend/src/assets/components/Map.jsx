@@ -6,6 +6,9 @@ import { useCallback, useState, useRef } from 'react'
 import {
     GoogleMap,
     useLoadScript,
+    Marker,
+    Circle,
+    MarkerCluster
 } from "@react-google-maps/api"
 
 // Custom Map Styling
@@ -14,6 +17,9 @@ import mapStyles from '../../mapStyles';
 import Locate from './Locate';
 import Search from "./Search";
 import homeheart from "../homeheart.png"
+import houseicon from "../houseicon.png"
+
+// import express from 'express'
 
 // import { Circle } from '@react-google-maps/api';
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -46,6 +52,7 @@ function Map() {
     // script that loads Google Maps into App
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey:
+            // googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
             // -=-= A D D   A P I   K E Y  T 0   B A C K E N D -=-=-=-=
             libraries,
     });
@@ -78,6 +85,14 @@ function Map() {
                     options={options}
                     onLoad={onMapLoad}
                 >
+                    <>
+                        {center && <Marker
+                            position={center}
+                        // icon={houseicon}
+                        // how to resize?
+                        />}
+                        <Circle center={center} radius={2200} />
+                    </>
                 </GoogleMap>
             </div >
         </div>

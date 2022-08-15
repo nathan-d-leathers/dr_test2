@@ -2,6 +2,7 @@ import React from "react";
 import { Wheel } from "react-custom-roulette";
 import { Link } from "react-router-dom";
 // import Activity from "./Activity";
+import ActivityList from "../pages/ActivityList";
 
 function ActivityWheel(props) {
 
@@ -32,17 +33,18 @@ function ActivityWheel(props) {
             }>
                 Spin the Wheel</button>
             <h3>Your Date Activity Tonight Shall Be...</h3>
-            <p>Prize Number: {props.prizeNumber}</p>
+            {/* <p>Prize Number: {props.prizeNumber}</p> */}
             {/* <Activity prizeNumber={prizeNumber} /> */}
-            <br />
-            <button id="accept">
+            {/* <br /> */}
+            {/* <button id="accept">
                 <Link to="activitymap">Accept</Link>
             </button>
             <button id="respin" onClick={props.handleSpinClick}>RE-SPIN</button>
-            <br />
-            <Link to="activities">Activities</Link>
-
-        </div>
+            <br /> */}
+            {/* <button>
+                <Link to="activities">Activities</Link>
+            </button> */}
+        </div >
     )
 
 }

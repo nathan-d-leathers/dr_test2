@@ -1,7 +1,8 @@
 import ActivityWheel from "../components/ActivityWheel"
 import { useCallback, useState, useRef } from 'react'
+import Activity from "../components/Activity";
 
-function Homepage() {
+function Homepage(props) {
 
 
     const wheeldata = [
@@ -47,7 +48,7 @@ function Homepage() {
     ]
 
     const [mustSpin, setMustSpin] = useState(false);
-    const [prizeNumber, setPrizeNumber] = useState(0);
+    const [prizeNumber, setPrizeNumber] = useState(null);
 
     const handleSpinClick = () => {
         const newPrizeNumber = Math.floor(Math.random() * wheeldata.length)
@@ -73,6 +74,11 @@ function Homepage() {
                 handleSpinClick={handleSpinClick}
                 onStopSpinning={onStopSpinning}
             />
+            {prizeNumber &&
+                <Activity id={prizeNumber}
+                    handleSpinClick={handleSpinClick}
+                />
+            }
         </div>
     )
 }
