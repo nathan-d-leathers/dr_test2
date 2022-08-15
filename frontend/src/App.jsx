@@ -5,7 +5,8 @@ import { useEffect, useState } from 'react'
 import Homepage from './assets/pages/homepage'
 import Mappage from './assets/pages/mappage'
 import ActivityList from './assets/pages/ActivityList'
-import Activity from './assets/components/Activity'
+import Wheelpage from './assets/pages/wheelpage'
+// import Activity from './assets/components/Activity'
 import axios from 'axios'
 
 
@@ -54,10 +55,17 @@ function App() {
   const submitSignupForm = function (event) {
     // this isn't actually necessary, since this isn't in a form. but if it WAS a form, we'd need to prevent default.
     event.preventDefault()
-    axios.post('/signup/', { email: 'jeff@amazon.com', password: 'dragons' }).then((response) => {
-      console.log('response from server: ', response)
-      // window.location.reload()
+    const emailInput = event.target.email;
+    const passwordInput = event.target.password;
+
+    axios.post('/signup/', {
+      email: emailInput,
+      password: passwordInput
     })
+      .then((response) => {
+        console.log('response from server: ', response)
+        // window.location.reload()
+      })
   }
 
   const submitLoginForm = function (event) {
@@ -111,26 +119,31 @@ function App() {
   // -=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
   // // Activity Functionality
-  // const [activity, setActivity] = useState(null)
+  const [activity, setActivity] = useState(null)
+  // activity/setactivity can now be passed to any page as a prop
 
 
   return (
     <div className='App'>
-      <button id="signup" onClick={submitSignupForm}>Sign Up</button>
-      <button id="login" onClick={submitLoginForm}>Log In</button>
-      <button id="logout" onClick={logOut}>Log Out</button>
       <br />
       <HashRouter>
         <Routes>
-          <Route path='/' element={<Homepage
+          <Route path="/" element={<Homepage
+            submitSignupForm={submitSignupForm}
+            submitLoginForm={submitLoginForm}
+            logOut={logOut}
           />} />
-          <Route path='/activitymap' element={<Mappage
+          <Route path='/wheelpage' element={<Wheelpage
+            activity={activity}
+            setActivity={setActivity}
+          />} />
+          <Route path='/wheelpage/activitymap' element={<Mappage
           />} />
           <Route path='/activities' element={<ActivityList />} />
           {/* <Route path='/activities/:id' element={<Activity />} /> */}
         </Routes>
       </HashRouter>
-    </div>
+    </div >
   )
 }
 

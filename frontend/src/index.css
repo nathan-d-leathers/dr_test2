@@ -11,7 +11,19 @@
 }
 
 
+#signup{
+  margin-right: 2%;
 
+}
+
+#login{
+  margin-left: 2%;
+
+}
+
+#welcome{
+  font-family: "Gambler";
+}
 /* .locate img {
   width: 30px;
   cursor: pointer;
