@@ -94,6 +94,19 @@ function App() {
           // logOut={logOut}
           />} /> */}
 
+  // function getBusinessData() {
+  //   const [businesses, setBusinesses] = useState([])
+  //   axios.get('/yelpAPI/')
+  //     .then((response) => {
+  //       console.log("great success!")
+  //       setBusinesses(response.data.businesses)
+  //     }
+  // }
+
+
+
+
+
   // -=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
   // // Activity Functionality

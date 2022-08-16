@@ -10,4 +10,6 @@ urlpatterns = [
     path('whoami/', views.who_am_i),
     path('activities/', views.get_activities),
     path('activities/<int:actId>', views.get_activity),
+    # path('googleapi', views.googleapi),
+    path('yelpAPI/', views.yelpAPI)
 ]

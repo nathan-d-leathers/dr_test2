@@ -2,11 +2,18 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.core import serializers
 from django.contrib.auth import authenticate, login, logout
+import dotenv
 from .models import Activity
 from .models import AppUser as User
 from rest_framework.decorators import api_view
+import googlemaps
+import requests
+# from dotenv import load_dotenv
+# import dotenv
+# import os
 
-
+# load_dotenv()
+# secret_key = os.environ(yelpApiKey)
 # Create your views here.
 
 # USED FOR CONNECTION TESTING
@@ -114,3 +121,30 @@ def get_activity(request, actId):
     # elif method == 'POST':
     # do something else
     # etc ....
+
+
+# @api_view('GET')
+# def googleapi(request):
+#     # url has google api search, location based off of Code Platoon HQ, Radius 3000 Meters,Type=Rersturants, and API Key
+#     url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.879930%-87.630710&radius=3000&type=restaurant&key=AIzaSyDJoyNs_BRc2WOkSw9gmxvbGC-B_P2CWlY"
+#     payload = {}
+#     headers = {}
+#     response = requests.request("GET", url, headers=headers, data=payload)
+#     data = response.json()
+#     print(data)
+#     return HttpResponse(data['results'])
+
+# , 'POST'
+@api_view(['GET'])
+def yelpAPI(request):
+   
+
+    url = "https://api.yelp.com/v3/businesses/search?term=coffee&latitude=41.879930&longitude=-87.630710&radius=5000&sort_on=popularity&limit=20"
+    results = {}
+    headers = {
+        'Authorization': 'Bearer %s' % YELP_API_KEY
+    }
+    response = requests.request("GET", url, headers=headers, data=results)
+    print(response.text)
+    data = response.text
+    return HttpResponse([data])

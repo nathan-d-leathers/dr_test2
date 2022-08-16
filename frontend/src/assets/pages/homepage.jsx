@@ -1,8 +1,19 @@
 import { Link } from "react-router-dom";
-import Wheelpage from "./wheelpage";
+import Wheelpage from "./wheelpage"
+import { useState } from "react"
 // import loveheart from "../loveheart.png"
 
 function Homepage(props) {
+    const [businesses, setBusinesses] = useState([])
+    const getBusinessData = () => {
+
+        axios.get('/yelpAPI/')
+            .then((response) => {
+                console.log("great success!")
+                setBusinesses(response.data.businesses)
+            }
+            ), []
+    }
 
     return (
         <div class="signupFrom">
@@ -33,6 +44,14 @@ function Homepage(props) {
             <button id="towheelpage">
                 <Link to="wheelpage">Lets Plan a Date!</Link>
             </button>
+            {/* <button onclick={getBusinessData}>Get Coffeeshops</button>
+            <div>
+                <ul>
+                    {businesses.map((business) => {
+                        <li>{business.name}</li>
+                    })}
+                </ul>
+            </div> */}
         </div>
     )
 }
