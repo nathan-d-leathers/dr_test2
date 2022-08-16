@@ -5,7 +5,7 @@ import axios from "axios";
 function LogIn(props) {
 
 
-    const submitLoginForm = function (event) {
+    const submitLoginForm = (event) => {
         // this isn't actually necessary, since this isn't in a form. but if it WAS a form, we'd need to prevent default.
         event.preventDefault()
         axios.post('/login', {
@@ -14,7 +14,8 @@ function LogIn(props) {
         })
             .then((response) => {
                 console.log('response from server: ', response)
-                window.location.href = "../wheelpage"
+                // window.location.href = "../wheelpage"
+                // create user seems to work now, but I cant login
             })
     }
 

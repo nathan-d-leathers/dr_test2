@@ -2,7 +2,7 @@ import axios from "axios";
 
 function SignUp(props) {
 
-    const submitSignupForm = function (event) {
+    const submitSignupForm = (event) => {
         // this isn't actually necessary, since this isn't in a form. but if it WAS a form, we'd need to prevent default.
         event.preventDefault()
         console.log('submitted: ' + event.target[0].value, event.target[1].value)
@@ -15,7 +15,8 @@ function SignUp(props) {
                 console.log("Sign Up did not work")
             }
             console.log('response from server: ', response)
-            window.location.href = "../"
+            // window.location.href = "../"
+            // uncomment to send user back to homepage after signup
         })
     }
 

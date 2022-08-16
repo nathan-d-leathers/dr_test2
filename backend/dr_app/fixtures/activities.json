@@ -103,8 +103,8 @@
         "pk" : 12,
         "fields" : {
             "name": "Try an Adventure Sport",
-            "description": "Skydiving, Bungee Jumping, White Water Rafting, Zip Lining, Scuba Diving there's lots of ways to get an adrenaline rush on an adventure sports tour! Perhaps a little too much of a rush? Try a high ropes course, trampoline park, or indoor rock climbing gym. ",
-            "keywords": ""
+            "description": "Skydiving, Bungee Jumping, White Water Rafting, Zip Lining, Scuba Diving there's lots of ways to get an adrenaline rush on an adventure sports tour! Perhaps a little too much of a rush? Try a high ropes course, trampoline park, or indoor rock climbing gym.",
+            "keywords": "Adventure Sport"
         }
     },
     {

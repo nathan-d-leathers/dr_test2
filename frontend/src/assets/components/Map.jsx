@@ -1,6 +1,6 @@
 import React from 'react';
 // // import Hooks
-import { useCallback, useState, useRef } from 'react'
+import { useCallback, useState, useRef, useMemo } from 'react'
 
 // // import Google Maps
 import {
@@ -19,9 +19,6 @@ import Search from "./Search";
 import homeheart from "../homeheart.png"
 import houseicon from "../houseicon.png"
 
-// import express from 'express'
-
-// import { Circle } from '@react-google-maps/api';
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 function Map() {
@@ -51,10 +48,10 @@ function Map() {
 
     // script that loads Google Maps into App
     const { isLoaded, loadError } = useLoadScript({
-        googleMapsApiKey:
-            // googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
-            // -=-= A D D   A P I   K E Y  T 0   B A C K E N D -=-=-=-=
-            libraries,
+        googleMapsApiKey: "AIzaSyDJoyNs_BRc2WOkSw9gmxvbGC-B_P2CWlY",
+        // googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+        // -=-= A D D   A P I   K E Y  T 0   B A C K E N D -=-=-=-=
+        libraries,
     });
 
     const mapRef = useRef();
@@ -72,12 +69,19 @@ function Map() {
     if (loadError) return "Error Loading Maps"
     if (!isLoaded) return "Loading Maps..."
 
+    // const [show]
+    // const locations = useMemo(() => generateActivityLocations(center), [center])
+
+
+
+
+
     // actual HTML to be displayed on page
     return (
         <div className='MapBox'>
-            <Locate panTo={panTo} />
+            <Locate panTo={panTo} center={center} />
             <div className="App">
-                <Search panTo={panTo} />
+                <Search panTo={panTo} center={center} />
                 <GoogleMap
                     mapContainerStyle={mapContainerStyle}
                     zoom={14}
@@ -98,5 +102,6 @@ function Map() {
         </div>
     )
 }
+
 
 export default Map
