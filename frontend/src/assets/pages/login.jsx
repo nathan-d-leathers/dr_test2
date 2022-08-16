@@ -8,13 +8,14 @@ function LogIn(props) {
     const submitLoginForm = (event) => {
         // this isn't actually necessary, since this isn't in a form. but if it WAS a form, we'd need to prevent default.
         event.preventDefault()
-        axios.post('/login', {
+        axios.post('/login/', {
             'email': event.target[0].value,
             'password': event.target[1].value
         })
             .then((response) => {
                 console.log('response from server: ', response)
-                // window.location.href = "../wheelpage"
+                // window.location.reload()
+                window.location.href = "../#/wheelpage"
                 // create user seems to work now, but I cant login
             })
     }

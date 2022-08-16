@@ -15,7 +15,7 @@ function SignUp(props) {
                 console.log("Sign Up did not work")
             }
             console.log('response from server: ', response)
-            // window.location.href = "../"
+            window.location.href = "../"
             // uncomment to send user back to homepage after signup
         })
     }

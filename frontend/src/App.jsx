@@ -58,7 +58,7 @@ function App() {
   const logOut = function (event) {
     // this isn't actually necessary, since this isn't in a form. but if it WAS a form, we'd need to prevent default.
     event.preventDefault()
-    axios.post('/logout').then((response) => {
+    axios.post('/logout/').then((response) => {
       console.log('response from server: ', response)
       whoAmI()
     })
@@ -119,6 +119,8 @@ function App() {
             activity={activity}
             setActivity={setActivity}
             logOut={logOut}
+            user={user}
+            setUser={setUser}
           />} />
           <Route path='/wheelpage/activitymap' element={<Mappage
           />} />

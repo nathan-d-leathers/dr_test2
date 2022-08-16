@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.core import serializers
-# from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout
 from .models import Activity
 from .models import AppUser as User
 from rest_framework.decorators import api_view
+
 
 # Create your views here.
 

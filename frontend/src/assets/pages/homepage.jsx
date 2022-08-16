@@ -30,7 +30,9 @@ function Homepage(props) {
             </button>
             {/* <button id="logout" onClick={props.logOut}>Log Out</button> */}
             <br />
-            <Link to="wheelpage">Lets Plan a Date!</Link>
+            <button id="towheelpage">
+                <Link to="wheelpage">Lets Plan a Date!</Link>
+            </button>
         </div>
     )
 }
