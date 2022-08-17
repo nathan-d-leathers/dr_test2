@@ -48,7 +48,6 @@ function Map(props) {
 
     // script that loads Google Maps into App
     const { isLoaded, loadError } = useLoadScript({
-
         // googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
         // -=-= A D D   A P I   K E Y  T 0   B A C K E N D -=-=-=-=
         libraries,
