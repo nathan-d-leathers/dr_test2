@@ -5,7 +5,7 @@
         "fields" : {
             "name": "See a Movie",
             "description": "Go see a new film or a beloved classic at your local movie theater, independent cinema, or drive-in.",
-            "keywords": "Movie Theater OR Cinema OR Drive-In"
+            "keywords": "Movie Theater + Cinema + Drive-In"
         }
     },
     {
@@ -14,7 +14,7 @@
         "fields" : {
             "name": "Attend a Concert",
             "description": "See a gig at your local concert hall. If you don't have one or don't want to see any of the larger touring acts, check out a smaller local venue to hear some of the talented musicians in your area!",
-            "keywords": "Live Music Venue OR Open Mic"
+            "keywords": "Live Music Venue + Open Mic"
         }
     },
     {
@@ -23,7 +23,7 @@
         "fields" : {
             "name": "Visit a Museum or Gallery",
             "description": "Spend a day seeing the exhibits at your local museum or art gallery.",
-            "keywords": "Museum OR Art Gallery"
+            "keywords": "Museum + Art Gallery"
         }
     },
     {
@@ -32,7 +32,7 @@
         "fields" : {
             "name": "Watch a Sports Game",
             "description": "Cheer on your favorite team or go see a sport that you know little about to learn how it's played!",
-            "keywords": "Sports Complex OR Stadium OR Arena OR Athletic Field"
+            "keywords": "Sports Complex + Stadium + Arena + Athletic Field"
         }
     },
     {
@@ -41,7 +41,7 @@
         "fields" : {
             "name": "Beach Day",
             "description": "Grab your swimsuit and sunscreen and spend a day at the Beach. Build a sand castle, go snorkeling, or try your hand at surfing! No Beach nearby? Relax at a local pool for a similar sand-free experience.",
-            "keywords": "Beach OR Pool"
+            "keywords": "Beach + Pool"
         }
     },
     {
@@ -50,7 +50,7 @@
         "fields" : {
             "name": "Target Practice",
             "description": "Improve your accuracy by visiting your local firearms or archery Range, or check out an axe throwing range for an additional arm workout.",
-            "keywords": "Firearm OR Gun OR Archery OR Axe Throwing OR Shooting Range"
+            "keywords": "Firearm + Gun + Archery + Axe Throwing + Shooting Range"
         }
     },
     {
@@ -59,7 +59,7 @@
         "fields" : {
             "name": "Visit a Fun Park",
             "description": "Unleash your inner child at a nearby Amusement Park or Water Park.",
-            "keywords": "Amusement Park OR Water Park"
+            "keywords": "Amusement Park + Water Park"
         }
     },
     {
@@ -68,7 +68,7 @@
         "fields" : {
             "name": "Explore the Paranormal",
             "description": "Investigate the Unexplained on a local ghost tour or see a psychic to have your fortune told. Check out a haunted house for an extra fright when in season! ",
-            "keywords": "Ghost Tour OR Psychic OR Haunted House"
+            "keywords": "Ghost Tour + Psychic + Haunted House"
         }
     },
     {
@@ -86,7 +86,7 @@
         "fields" : {
             "name": "Spend time with Animals",
             "description": "Learn about the creatures of our natural world at your local zoo, aquarium, or educational animal center. No animal attractions near you? Consider visiting a local animal shelter for a tour or volunteer opportunities.",
-            "keywords": "Zoo OR Aquarium OR Safari Park or Animal Shelter "
+            "keywords": "Zoo + Aquarium + Safari Park + Animal Shelter "
         }
     },
     {
@@ -113,7 +113,7 @@
         "fields" : {
             "name": "Climb a Mountain",
             "description": "Go for a hike and see the world from a birds eye view. Enjoy a seasonal sport at a mountain resort such as Sking, Snowboarding, or Mountain Biking ",
-            "keywords": "Mountain OR Mountain Bike Park OR Ski Resort"
+            "keywords": "Mountain + Mountain Bike Park + Ski Resort"
         }
     },
     {
@@ -130,7 +130,7 @@
         "pk" : 15,
         "fields" : {
             "name": "See a Comedy Show",
-            "description": "Comedy/Improv",
+            "description": "See a Comedy or Improv Show",
             "keywords": "Comedy"
         }
     },
@@ -247,7 +247,7 @@
         "pk" : 28,
         "fields" : {
             "name": "Lookout",
-            "description": "Lookout ofr Sunset/Stargazing",
+            "description": "Lookout for Sunset/Stargazing",
             "keywords": "Lookout"
         }
     },
@@ -302,7 +302,7 @@
         "fields" : {
             "name": "Drinking",
             "description": "Brewery/Winery",
-            "keywords": "Brewery/Winery"
+            "keywords": "Brewery + Winery"
         }
     },
     {

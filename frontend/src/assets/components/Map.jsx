@@ -9,6 +9,7 @@ import {
     Marker,
     Circle,
     MarkerCluster,
+    InfoWindow
 } from "@react-google-maps/api"
 
 // Custom Map Styling
@@ -46,7 +47,7 @@ function Map(props) {
 
     // script that loads Google Maps into App
     const { isLoaded, loadError } = useLoadScript({
-
+        googleMapsApiKey: "AIzaSyDJoyNs_BRc2WOkSw9gmxvbGC-B_P2CWlY",
         // googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
         // -=-= A D D   A P I   K E Y  T 0   B A C K E N D -=-=-=-=
         libraries,
@@ -54,13 +55,16 @@ function Map(props) {
 
     const mapRef = useRef();
 
+    const getYelpData = props.getYelpData;
+
     const onMapLoad = useCallback((map) => {
         mapRef.current = map;
+        getYelpData(props.activity)
     }, []);
 
     const panTo = useCallback(({ lat, lng }) => {
         mapRef.current.panTo({ lat, lng });
-        mapRef.current.setZoom(12);
+        mapRef.current.setZoom(14);
         let newLat = lat;
         let newLng = lng
         console.log("new lat-lng " + newLat + newLng)
@@ -76,6 +80,19 @@ function Map(props) {
     // const locations = useMemo(() => generateActivityLocations(center), [center])
 
     // actual HTML to be displayed on page
+
+    const dateLocations = props.businessLocations
+
+    console.log("this is my bussiness Locations on the map page")
+    // console.log(dateLocations[0])
+    //  works!
+
+    // close
+    // for (let i = 0; i < dateLocations.length; i++) {
+    //     return (
+    //         <Marker key={i} position={dateLocations[i].coordiantes.value} />
+    //     )
+    // }
 
     // -=-=-=-=-=-=-=-=-Google Maps React Nearby place tutorial-=-=-=-=-=-
     // function getNearbyPlaces(center) {
@@ -119,8 +136,12 @@ function Map(props) {
     // let keyword = props.activity
     // let kword = keyword.keywords
     // console.log(kword)
-    const getYelpData = props.getYelpData;
-    getYelpData()
+    // const getYelpData = props.getYelpData;
+    // getYelpData()
+
+    // const [selectedLocation, setSelectedLocation] = useState(null)
+
+    // const bean = { lat: 41.883228, lng: -87.632401 }
 
     return (
         <div className='MapBox'>
@@ -140,21 +161,18 @@ function Map(props) {
                         // draggable={true} this make the image movable but doesnt set new marker
                         icon={houseicon}
                     />}
-                    {/* <>
-                        {center && <Marker
-                            position={center}
-                        // icon={houseicon}
-                        // how to resize?
-                        />}
-                        <Circle center={center} radius={2200} />
-                    </> */}
-
-                    {/* attempt to render business locations */}
-
-                    {/* {dateLocations.map((location) => (
-                        <Marker key={location[id]} position={location.coordinates.value} />
-                    ))} */}
-
+                    {dateLocations && dateLocations.map((location) => {
+                        console.log(location)
+                        console.log("coordiantes inside my marker map: ", location.coordinates)
+                        let newLat = location.coordinates.latitude
+                        let newLng = location.coordinates.longitude
+                        let newCoords = { lat: newLat, lng: newLng }
+                        return (
+                            <Marker
+                                key={location.id}
+                                position={newCoords} />
+                        )
+                    })}
                 </GoogleMap>
             </div >
         </div>
@@ -163,3 +181,20 @@ function Map(props) {
 
 
 export default Map
+
+
+
+{/* {setSelectedLocation && (
+                        <InfoWindow position={newCoords}>
+
+                        </InfoWindow>
+                    )} */}
+
+                //     <>
+                //     {center && <Marker
+                //         position={center}
+                //     // icon={houseicon}
+                //     // how to resize?
+                //     />}
+                //     {/* <Circle center={center} radius={2200} /> */}
+                // </>

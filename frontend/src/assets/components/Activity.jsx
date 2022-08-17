@@ -15,6 +15,9 @@ function Activity({ id, handleSpinClick, activity, setActivity, showSpinResults 
             })
     }, [id])
 
+
+    // console.log(activity.keywords)
+
     return (
         <div>
             {showSpinResults && activity &&

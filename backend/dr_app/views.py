@@ -136,11 +136,9 @@ def get_activity(request, actId):
 
 # , 'POST'
 @api_view(['GET'])
-def yelpAPI(request):
-
+def yelpAPI(request, activity):
+    print("Activity is now in the backend", activity)
     # i can add variables using f" this is a {vairable_name}!"
-
-
     base_url = "https://api.yelp.com/v3/businesses/search?"
     # search_params = {
     #     'term': 'coffee',
@@ -150,8 +148,9 @@ def yelpAPI(request):
     #     'sort_on': 'popularity',
     #     'limit': '20'
     # }
-    keyword = "coffee"
-    search = f"term={keyword}&latitude=41.879930&longitude=-87.630710&radius=5000&sort_on=popularity&limit=20"
+    # can add mutliple terms by adding "coffee+tea" spaces are ok
+    # keyword = "movie theater + coffee"
+    search = f"term={activity}&latitude=41.879930&longitude=-87.630710&radius=5000&sort_on=popularity&limit=20"
 
     url = base_url + search
 
