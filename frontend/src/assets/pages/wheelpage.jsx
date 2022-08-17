@@ -86,12 +86,10 @@ function Wheelpage(props) {
                     showSpinResults={showSpinResults}
                 />
             }
-            <div>
-                <button id="homebutton">
-                    <Link to="/">Home</Link>
-                </button>
-                <button id="logout" onClick={props.logOut}>Log Out</button>
-            </div>
+            <br />
+            <button id="homebutton">
+                <Link to="/">Home</Link>
+            </button>
         </div>
     )
 }

@@ -14,8 +14,8 @@ function LogIn(props) {
         })
             .then((response) => {
                 console.log('response from server: ', response)
-                // window.location.reload()
                 window.location.href = "../#/wheelpage"
+                window.location.reload()
                 // create user seems to work now, but I cant login
             })
     }

@@ -26,14 +26,6 @@
 }
 
 
-#homebutton {
-margin-right: 50%;
-}
-
-#logout {
- 
-}
-
 #towheelpage {
   margin-top: 20%;
 }
@@ -67,7 +59,7 @@ body {
   font-size: 3.8em;
   line-height: 0;
   font-family: "Gambler";
-  margin-top: 15%;
+  /* margin-top: 15%; */
   /* margin: 0; */
 }
 
@@ -103,7 +95,20 @@ button:hover {
   background-color: #de0e0e;
 }
 
-
+#prizeBlock {
+  background-color: rgb(231, 183, 183);
+  max-width: 500px;
+  height:auto;
+  border: 3px solid black;
+  border-radius: 4%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin:auto;
+  position: relative;
+  /* font-family: "Pinyon Script"; */
+}
 
 
 /* button:focus,
@@ -236,4 +241,10 @@ button:focus-visible {
   height: auto;
   z-index: 10;
   cursor:pointer;
+}
+
+#actTitle{
+    font-family: "Gambler";
+    font-size: 250%;
+    color: goldenrod;
 }

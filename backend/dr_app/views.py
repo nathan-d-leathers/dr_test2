@@ -137,7 +137,6 @@ def get_activity(request, actId):
 # , 'POST'
 @api_view(['GET'])
 def yelpAPI(request):
-   
 
     url = "https://api.yelp.com/v3/businesses/search?term=coffee&latitude=41.879930&longitude=-87.630710&radius=5000&sort_on=popularity&limit=20"
     results = {}

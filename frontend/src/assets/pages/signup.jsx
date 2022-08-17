@@ -1,6 +1,6 @@
 import axios from "axios";
 
-function SignUp(props) {
+function SignUp() {
 
     const submitSignupForm = (event) => {
         // this isn't actually necessary, since this isn't in a form. but if it WAS a form, we'd need to prevent default.
