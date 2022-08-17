@@ -5,7 +5,7 @@
         "fields" : {
             "name": "See a Movie",
             "description": "Go see a new film or a beloved classic at your local movie theater, independent cinema, or drive-in.",
-            "keywords": "Movie Theater + Cinema + Drive-In"
+            "keywords": "movietheaters"
         }
     },
     {
@@ -14,7 +14,7 @@
         "fields" : {
             "name": "Attend a Concert",
             "description": "See a gig at your local concert hall. If you don't have one or don't want to see any of the larger touring acts, check out a smaller local venue to hear some of the talented musicians in your area!",
-            "keywords": "Live Music Venue + Open Mic"
+            "keywords": "musicvenue"
         }
     },
     {
@@ -23,7 +23,7 @@
         "fields" : {
             "name": "Visit a Museum or Gallery",
             "description": "Spend a day seeing the exhibits at your local museum or art gallery.",
-            "keywords": "Museum + Art Gallery"
+            "keywords": "museum+galleries"
         }
     },
     {
@@ -32,7 +32,7 @@
         "fields" : {
             "name": "Watch a Sports Game",
             "description": "Cheer on your favorite team or go see a sport that you know little about to learn how it's played!",
-            "keywords": "Sports Complex + Stadium + Arena + Athletic Field"
+            "keywords": "sportsteams"
         }
     },
     {
@@ -41,7 +41,7 @@
         "fields" : {
             "name": "Beach Day",
             "description": "Grab your swimsuit and sunscreen and spend a day at the Beach. Build a sand castle, go snorkeling, or try your hand at surfing! No Beach nearby? Relax at a local pool for a similar sand-free experience.",
-            "keywords": "Beach + Pool"
+            "keywords": "beaches+swimmingpools"
         }
     },
     {
@@ -50,7 +50,7 @@
         "fields" : {
             "name": "Target Practice",
             "description": "Improve your accuracy by visiting your local firearms or archery Range, or check out an axe throwing range for an additional arm workout.",
-            "keywords": "Firearm + Gun + Archery + Axe Throwing + Shooting Range"
+            "keywords": "gun_ranges+archery+axethrowing"
         }
     },
     {
@@ -59,7 +59,7 @@
         "fields" : {
             "name": "Visit a Fun Park",
             "description": "Unleash your inner child at a nearby Amusement Park or Water Park.",
-            "keywords": "Amusement Park + Water Park"
+            "keywords": "amusementparks+waterparks"
         }
     },
     {
@@ -68,7 +68,7 @@
         "fields" : {
             "name": "Explore the Paranormal",
             "description": "Investigate the Unexplained on a local ghost tour or see a psychic to have your fortune told. Check out a haunted house for an extra fright when in season! ",
-            "keywords": "Ghost Tour + Psychic + Haunted House"
+            "keywords": "psychic_astrology+hauntedhouses"
         }
     },
     {
@@ -86,7 +86,7 @@
         "fields" : {
             "name": "Spend time with Animals",
             "description": "Learn about the creatures of our natural world at your local zoo, aquarium, or educational animal center. No animal attractions near you? Consider visiting a local animal shelter for a tour or volunteer opportunities.",
-            "keywords": "Zoo + Aquarium + Safari Park + Animal Shelter "
+            "keywords": "zoos+aquariums"
         }
     },
     {
@@ -95,7 +95,7 @@
         "fields" : {
             "name": "Enjoy the Performing Arts",
             "description": "Plays, musicals, dance, recitals, magic and more, there's something for everyone at the local performing arts theatre! ",
-            "keywords": "Performing Arts Theatre"
+            "keywords": "theatre"
         }
     },
     {
@@ -103,8 +103,8 @@
         "pk" : 12,
         "fields" : {
             "name": "Try an Adventure Sport",
-            "description": "Skydiving, Bungee Jumping, White Water Rafting, Zip Lining, Scuba Diving there's lots of ways to get an adrenaline rush on an adventure sports tour! Perhaps a little too much of a rush? Try a high ropes course, trampoline park, or indoor rock climbing gym.",
-            "keywords": "Adventure Sport"
+            "description": "skydiving, bungee jumping, white water rafting, zip lining, Scuba Diving there's lots of ways to get an adrenaline rush on an adventure sports tour! Perhaps a little too much of a rush? Try a high ropes course, trampoline park, or indoor rock climbing gym.",
+            "keywords": "bungeejumping+scuba+skydiving+challengecoursees+trampoline"
         }
     },
     {
@@ -112,17 +112,17 @@
         "pk" : 13,
         "fields" : {
             "name": "Climb a Mountain",
-            "description": "Go for a hike and see the world from a birds eye view. Enjoy a seasonal sport at a mountain resort such as Sking, Snowboarding, or Mountain Biking ",
-            "keywords": "Mountain + Mountain Bike Park + Ski Resort"
+            "description": "See the landscape stretch out beneath you from the top of a nearby mountain. Enjoy a seasonal sport at a mountain resort such as Sking, Snowboarding, or Mountain Biking ",
+            "keywords": "hiking+skiresorts"
         }
     },
     {
         "model" : "dr_app.activity",
         "pk" : 14,
         "fields" : {
-            "name": "Camping",
-            "description": "Camping",
-            "keywords": "Camping"
+            "name": "Go Camping",
+            "description": "Return to nature and spend some quality time in the great outdoors!",
+            "keywords": "campground"
         }
     },
     {
@@ -130,53 +130,53 @@
         "pk" : 15,
         "fields" : {
             "name": "See a Comedy Show",
-            "description": "See a Comedy or Improv Show",
-            "keywords": "Comedy"
+            "description": "Have your funny bone tickled at a local comedy or improv show!",
+            "keywords": "comedy"
         }
     },
     {
         "model" : "dr_app.activity",
         "pk" : 16,
         "fields" : {
-            "name": "Street Festival",
-            "description": "Street Festival",
-            "keywords": "Street Festival"
+            "name": "Festival",
+            "description": "Whether it's a street fair, open air market, or seasonal celebration, get out in the crowd and enjoy the local festivities!",
+            "keywords": "festivals"
         }
     },
     {
         "model" : "dr_app.activity",
         "pk" : 17,
         "fields" : {
-            "name": "get out on the water",
-            "description": "rent a boat, kayak, canoe",
-            "keywords": "marina"
+            "name": "Get out on the Water",
+            "description": "Explore your local waterways. Kayaks, canoes, speedboats, jet ski's, there's lots of ways to float and enjoy the waves!",
+            "keywords": "boating+marinas"
         }
     },
     {
         "model" : "dr_app.activity",
         "pk" : 18,
         "fields" : {
-            "name": "dancing",
-            "description": "dancing",
-            "keywords": "dancing"
+            "name": "Dancing",
+            "description": "Get out and a shake your tailfeathers at a local ballroom, studio, or club!",
+            "keywords": "dance+club"
         }
     },
     {
         "model" : "dr_app.activity",
         "pk" : 19,
         "fields" : {
-            "name": "escape room",
-            "description": "escape room",
-            "keywords": "escape room"
+            "name": "Escape Room",
+            "description": "See if you've got what it takes to escape in a local escape room game!",
+            "keywords": "escapegames"
         }
     },
     {
         "model" : "dr_app.activity",
         "pk" : 20,
         "fields" : {
-            "name": "mini golf",
-            "description": "mini golf",
-            "keywords": "mini golf"
+            "name": "Mini Golf",
+            "description": "See if you can get around the obstacles at your local minigolf course. Loser buys the ice cream!",
+            "keywords": "mini_golf"
         }
     },
     {
@@ -184,7 +184,7 @@
         "pk" : 21,
         "fields" : {
             "name": "Bowling",
-            "description": "bowling",
+            "description": "Hit the lanes at your local alley and try to stay out of the gutters!",
             "keywords": "bowling"
         }
     },
@@ -193,7 +193,7 @@
         "pk" : 22,
         "fields" : {
             "name": "Botanical Garden",
-            "description": "Botanical Garden",
+            "description": "Enjoy the exotic plants at your local botanical garden",
             "keywords": "Botanical Garden"
         }
     },
@@ -202,8 +202,8 @@
         "pk" : 23,
         "fields" : {
             "name": "Karaoke",
-            "description": "Karaoke",
-            "keywords": "Karaoke"
+            "description": "Belt out your favorite tunes in a night at karaoke!",
+            "keywords": "karaoke"
         }
     },
     {
@@ -211,8 +211,8 @@
         "pk" : 24,
         "fields" : {
             "name": "Skating",
-            "description": "Skating, ice skating, rollerblading, skateboarding",
-            "keywords": "Skating"
+            "description": "Skating, ice skating, rollerblading, or skateboarding, find a place to test your balance",
+            "keywords": "skatingrinks+skate_parks"
         }
     },
     {
@@ -220,8 +220,8 @@
         "pk" : 25,
         "fields" : {
             "name": "Farm",
-            "description": "Farm",
-            "keywords": "Farm"
+            "description": "Go to a pick your own farm or get some local produce at the local farmers market",
+            "keywords": "farm"
         }
     },
     {
@@ -229,8 +229,8 @@
         "pk" : 26,
         "fields" : {
             "name": "Rock Climbing",
-            "description": "Rock Climbing",
-            "keywords": "Rock Climbing"
+            "description": "Get vertical at your local rock climbing gym!",
+            "keywords": "rock_climbing"
         }
     },
     {
@@ -238,8 +238,8 @@
         "pk" : 27,
         "fields" : {
             "name": "Take a Class",
-            "description": "Take a Class",
-            "keywords": "Take a Class"
+            "description": "Find a new hobby by trying a local class! Art, Dance, Cooking, there's always something new to learn! ",
+            "keywords": "classes"
         }
     },
     {
@@ -247,7 +247,7 @@
         "pk" : 28,
         "fields" : {
             "name": "Lookout",
-            "description": "Lookout for Sunset/Stargazing",
+            "description": "Find a local lookout and watch the sunset. Stick around when it gets dark to do a little stargazing!",
             "keywords": "Lookout"
         }
     },
@@ -255,8 +255,8 @@
         "model" : "dr_app.activity",
         "pk" : 29,
         "fields" : {
-            "name": "Spa",
-            "description": "Spa",
+            "name": "Spa Day",
+            "description": "Relax, you've earned it! Pamper yourself at a local spa!",
             "keywords": "Spa"
         }
     },
@@ -265,8 +265,8 @@
         "pk" : 30,
         "fields" : {
             "name": "Horseback Riding",
-            "description": "Horseback Riding",
-            "keywords": "Horseback Riding"
+            "description": "Go for a romantic ride or visit a ranch to take lessons!",
+            "keywords": "horsebackbackriding"
         }
     },
     {
@@ -274,17 +274,17 @@
         "pk" : 31,
         "fields" : {
             "name": "Shopping",
-            "description": "Shopping",
-            "keywords": "Shopping"
+            "description": "Get your partner and yourself some new clothes. If the closet's too full, go to one of your favorite hobby stores and see what's new in stock!",
+            "keywords": "shopping"
         }
     },
     {
         "model" : "dr_app.activity",
         "pk" : 32,
         "fields" : {
-            "name": "Park",
-            "description": "Park",
-            "keywords": "Park"
+            "name": "Go to the Park",
+            "description": "Take a walk, ride your bike, or play some local sports at the park",
+            "keywords": "park"
         }
     },
     {
@@ -292,26 +292,26 @@
         "pk" : 33,
         "fields" : {
             "name": "Las Vegas Night",
-            "description": "Last Vegas Night",
-            "keywords": "Casino"
+            "description": "Pretend your in Las Vegas and spice up the night the way ",
+            "keywords": "casino+cabaret"
         }
     },
     {
         "model" : "dr_app.activity",
         "pk" : 34,
         "fields" : {
-            "name": "Drinking",
-            "description": "Brewery/Winery",
-            "keywords": "Brewery + Winery"
+            "name": "Go Drink",
+            "description": "See how it's made at your local Brewery or Winery",
+            "keywords": "brewery+winery"
         }
     },
     {
         "model" : "dr_app.activity",
         "pk" : 35,
         "fields" : {
-            "name": "Smoke",
-            "description": "Cigar, Hookah, Dispensary",
-            "keywords": "Smoke"
+            "name": "Up in Smoke",
+            "description": "Visit a local hookah bar, cigar lounge, or dispensary",
+            "keywords": "hookah+dispensaries+cigar"
         }
     },
     {
@@ -319,7 +319,7 @@
         "pk" : 36,
         "fields" : {
             "name": "Local Bar",
-            "description": "Trivia night, pool, darts, bar crawl, speakeasy",
+            "description": "Try your hand at bar games or pub trivia, find a local speakeasy, or make a night out of it with a bar crawl",
             "keywords": "Bar"
         }
     },
@@ -328,17 +328,17 @@
         "pk" : 37,
         "fields" : {
             "name": "Take to the Skies",
-            "description": "Helicopter tour, hot air balloon",
-            "keywords": "Sky Tour"
+            "description": "Whether its a private plane, helicopter, hot air balloon, see the world from a birds eye view!",
+            "keywords": "aerial_tours"
         }
     },
     {
         "model" : "dr_app.activity",
         "pk" : 38,
         "fields" : {
-            "name": "Stay In for Takeout",
-            "description": "Stay in Night, takeout and streaming, video games, board game, or reading",
-            "keywords": "Takeout"
+            "name": "Stay Home",
+            "description": "You have a busy enough life, use this night to stay in. Get your favorite takeout and spend some quality time doing the things you love",
+            "keywords": "takeout"
         }
     }
 

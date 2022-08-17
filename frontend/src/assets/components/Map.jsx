@@ -19,6 +19,7 @@ import Locate from './Locate';
 import Search from "./Search";
 import homeheart from "../homeheart.png"
 import houseicon from "../houseicon.png"
+import date from "../date.png"
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
@@ -47,7 +48,7 @@ function Map(props) {
 
     // script that loads Google Maps into App
     const { isLoaded, loadError } = useLoadScript({
-        googleMapsApiKey: "AIzaSyDJoyNs_BRc2WOkSw9gmxvbGC-B_P2CWlY",
+
         // googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
         // -=-= A D D   A P I   K E Y  T 0   B A C K E N D -=-=-=-=
         libraries,
@@ -170,7 +171,9 @@ function Map(props) {
                         return (
                             <Marker
                                 key={location.id}
-                                position={newCoords} />
+                                position={newCoords}
+                                icon={date}
+                            />
                         )
                     })}
                 </GoogleMap>

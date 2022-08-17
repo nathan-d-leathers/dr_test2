@@ -150,7 +150,8 @@ def yelpAPI(request, activity):
     # }
     # can add mutliple terms by adding "coffee+tea" spaces are ok
     # keyword = "movie theater + coffee"
-    search = f"term={activity}&latitude=41.879930&longitude=-87.630710&radius=5000&sort_on=popularity&limit=20"
+
+    search = f"term={activity}&latitude=41.879930&longitude=-87.630710&radius=40000&sort_on=popularity&limit=20"
 
     url = base_url + search
 

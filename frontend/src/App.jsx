@@ -64,11 +64,11 @@ function App() {
 
   const [businessLocations, setBusinessLocations] = useState([])
 
-  console.log("this is outside", activity)
+  // console.log("this is outside", activity)
 
   const getYelpData = async (activity) => {
-    console.log("here")
-    console.log("This is inside ", activity)
+    // console.log("here")
+    // console.log("This is inside ", activity)
     if (activity) {
       console.log("this is my activty.keywords: ", activity.keywords)
       const response = await axios.get(`/yelpAPI/${activity.keywords}`)

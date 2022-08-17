@@ -24,8 +24,8 @@ function Activity({ id, handleSpinClick, activity, setActivity, showSpinResults 
                 <div id="prizeBlock">
                     <p id="actTitle">-{activity.name}-</p>
                     <h2>{activity.description}</h2>
-                    <p>These are the search terms I will pass into Google Maps:</p>
-                    <h5>{activity.keywords}</h5>
+                    {/* <p>These are the search terms I will pass into Google Maps:</p>
+                    <h5>{activity.keywords}</h5> */}
                     <button id="accept">
                         <Link to="activitymap">Accept</Link>
                     </button>
