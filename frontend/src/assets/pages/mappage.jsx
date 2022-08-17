@@ -16,6 +16,7 @@ function Mappage(props) {
             <div>
                 <Map
                     getYelpData={props.getYelpData}
+                    businessLocations={props.businessLocations}
                 />
             </div>
         </div>

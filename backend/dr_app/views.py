@@ -140,7 +140,7 @@ def yelpAPI(request):
 
     # i can add variables using f" this is a {vairable_name}!"
 
-    
+
     base_url = "https://api.yelp.com/v3/businesses/search?"
     # search_params = {
     #     'term': 'coffee',

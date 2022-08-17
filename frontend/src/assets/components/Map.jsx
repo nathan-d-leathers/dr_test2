@@ -148,6 +148,13 @@ function Map(props) {
                         />}
                         <Circle center={center} radius={2200} />
                     </> */}
+
+                    {/* attempt to render business locations */}
+
+                    {/* {dateLocations.map((location) => (
+                        <Marker key={location[id]} position={location.coordinates.value} />
+                    ))} */}
+
                 </GoogleMap>
             </div >
         </div>

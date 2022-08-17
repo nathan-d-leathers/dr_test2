@@ -62,15 +62,24 @@ function App() {
 
   // console.log(activity)
 
-  const [businesses, setBusinesses] = useState([])
+  const [businessLocations, setBusinessLocations] = useState([])
 
   const getYelpData = async () => {
     const response = await axios.get('/yelpAPI/')
     console.log(response.data)
     console.log("It Worked!")
+    setBusinessLocations(response.data.businesses)
+    // maybe problem with the useState[]?
+    // dateLocations.push(response.data.businesses)
+    // console.log(response.data.businesses[2].coordinates.value)
+    // returns {latitude: 41.8804279, longitude: -87.6356789}
   }
 
+  console.log("here is my business state: ")
+  console.log(businessLocations)
 
+  // future code to generate business around changed center
+  // const dateSpots = useMemo(() => getYelpData(center), [center])
   // const [keyword, setKeyword] = useState(null)
 
   // -=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -91,6 +100,7 @@ function App() {
           />} />
           <Route path='/wheelpage/activitymap' element={<Mappage
             getYelpData={getYelpData}
+            businessLocations={businessLocations}
           />} />
           <Route path='/activities' element={<ActivityList />} />
         </Routes>
