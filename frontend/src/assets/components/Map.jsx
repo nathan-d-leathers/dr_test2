@@ -21,7 +21,7 @@ import houseicon from "../houseicon.png"
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-function Map() {
+function Map(props) {
 
     // Variable to find a location in Google Places
     const libraries = ["places"]
@@ -31,9 +31,6 @@ function Map() {
         width: "800px",
         height: "800px",
     }
-
-    // <LatLngLiteral>
-    // { lat: 41.879930, lng: -87.630710 }
 
     // Adds a default center to map on load (Default: Code Platoon HQ, Chicago IL)
     let center = { lat: 41.879930, lng: - 87.630710 }
@@ -49,10 +46,10 @@ function Map() {
 
     // script that loads Google Maps into App
     const { isLoaded, loadError } = useLoadScript({
-        googleMapsApiKey:
-            // googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
-            // -=-= A D D   A P I   K E Y  T 0   B A C K E N D -=-=-=-=
-            libraries,
+
+        // googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+        // -=-= A D D   A P I   K E Y  T 0   B A C K E N D -=-=-=-=
+        libraries,
     });
 
     const mapRef = useRef();
@@ -119,6 +116,11 @@ function Map() {
     //     map.fitBounds(bounds);
     // }
     // -=-=-=-=-=-=-=-=-Google Maps React Nearby place tutorial-=-=-=-=-=-
+    // let keyword = props.activity
+    // let kword = keyword.keywords
+    // console.log(kword)
+    const getYelpData = props.getYelpData;
+    getYelpData()
 
     return (
         <div className='MapBox'>
@@ -131,7 +133,7 @@ function Map() {
                     center={center}
                     options={options}
                     onLoad={onMapLoad}
-                // onCenterChanged={<Marker position={center} />}
+                    onCenterChanged={<Marker position={center} />}
                 >
                     {center && <Marker
                         position={center}

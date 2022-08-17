@@ -1,16 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import ActivityList from "../pages/ActivityList";
-// import { useNavigate } from "react-router-dom";
 
 function Activity({ id, handleSpinClick, activity, setActivity, showSpinResults }) {
-
-    // const [activity, setActivity] = useState(null)
-    // const [activity_id, setActivityId] = useState(null)
-    // const { id } = useParams();
-
 
     useEffect(() => {
         axios
@@ -19,7 +11,7 @@ function Activity({ id, handleSpinClick, activity, setActivity, showSpinResults 
                 const activityFields = response.data[0].fields;
                 console.log(activityFields)
                 setActivity(activityFields)
-
+                // let keywords = response.data[0].fields.keywords
             })
     }, [id])
 

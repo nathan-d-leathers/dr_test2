@@ -138,12 +138,28 @@ def get_activity(request, actId):
 @api_view(['GET'])
 def yelpAPI(request):
 
-    url = "https://api.yelp.com/v3/businesses/search?term=coffee&latitude=41.879930&longitude=-87.630710&radius=5000&sort_on=popularity&limit=20"
+    # i can add variables using f" this is a {vairable_name}!"
+
+    
+    base_url = "https://api.yelp.com/v3/businesses/search?"
+    # search_params = {
+    #     'term': 'coffee',
+    #     'latitude': '41.879930',
+    #     'longitude': '-87.630710',
+    #     'radius': '5000',
+    #     'sort_on': 'popularity',
+    #     'limit': '20'
+    # }
+    keyword = "coffee"
+    search = f"term={keyword}&latitude=41.879930&longitude=-87.630710&radius=5000&sort_on=popularity&limit=20"
+
+    url = base_url + search
+
     results = {}
     headers = {
         'Authorization': 'Bearer %s' % YELP_API_KEY
     }
     response = requests.request("GET", url, headers=headers, data=results)
-    print(response.text)
+    # print(response.text)
     data = response.text
     return HttpResponse([data])

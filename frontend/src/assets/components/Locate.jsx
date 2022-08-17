@@ -20,7 +20,6 @@ function Locate(props) {
             {/* {props.center && <Marker
                 position={props.center}
             // icon={houseicon}
-            // how to resize?
             />}
             <Circle center={props.center} radius={2200} /> */}
             {/* still no luck getting my panTo to give me a marker and circle */}

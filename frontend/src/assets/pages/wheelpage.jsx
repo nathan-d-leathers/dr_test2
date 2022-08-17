@@ -2,6 +2,7 @@ import ActivityWheel from "../components/ActivityWheel"
 import { useCallback, useState, useRef } from 'react'
 import Activity from "../components/Activity";
 import { Link } from "react-router-dom"
+import home from "../home.png"
 
 function Wheelpage(props) {
 
@@ -54,7 +55,7 @@ function Wheelpage(props) {
 
     const handleSpinClick = () => {
         setShowSpinResults(false)
-        const newPrizeNumber = Math.floor(Math.random() * wheeldata.length)
+        const newPrizeNumber = Math.floor(Math.random() * wheeldata.length) + 1
         setPrizeNumber(newPrizeNumber)
         setMustSpin(true)
         console.log(prizeNumber)
@@ -87,9 +88,9 @@ function Wheelpage(props) {
                 />
             }
             <br />
-            <button id="homebutton">
-                <Link to="/">Home</Link>
-            </button>
+            <Link to="/">
+                <img src={home} id="homebutton" />
+            </Link>
         </div>
     )
 }

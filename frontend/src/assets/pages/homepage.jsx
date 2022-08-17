@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom";
-import Wheelpage from "./wheelpage"
-import { useState } from "react"
 
 function Homepage(props) {
-
 
     return (
         <div class="signupFrom">
@@ -25,7 +22,10 @@ function Homepage(props) {
 }
 
 export default Homepage
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
+
+// trying to import business data
 
 // const [businesses, setBusinesses] = useState([])
 // const getBusinessData = () => {
@@ -46,3 +46,17 @@ export default Homepage
                     })}
                 </ul>
             </div> */}
+
+// 
+// useEffect(() => {
+//     axios
+//         .get('/activities')
+//         .then((response) => {
+//             const activities = response.data;
+//             setActivities(activities.map((activity) => activity.fields))
+//             const activityIds = (activities.map((activity) => activity.pk))
+//             console.log(activityIds)
+//             setActivityId(activityIds)
+
+//         })
+// }, [])

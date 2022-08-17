@@ -16,10 +16,8 @@ function ActivityList() {
             .get('/activities')
             .then((response) => {
                 const activities = response.data;
-                // console.log(activities)
                 setActivities(activities.map((activity) => activity.fields))
                 const activityIds = (activities.map((activity) => activity.pk))
-                // prizeNums.push(...activityIds)
                 console.log(activityIds)
                 setActivityId(activityIds)
 

@@ -1,8 +1,5 @@
 import React from "react";
 import { Wheel } from "react-custom-roulette";
-import { Link } from "react-router-dom";
-// import Activity from "./Activity";
-import ActivityList from "../pages/ActivityList";
 import pointer from "../pointer.webp"
 
 function ActivityWheel(props) {
@@ -35,17 +32,6 @@ function ActivityWheel(props) {
             }>
                 Spin the Wheel</button>
             <h3>Your Date Activity Tonight Shall Be...</h3>
-            {/* <p>Prize Number: {props.prizeNumber}</p> */}
-            {/* <Activity prizeNumber={prizeNumber} /> */}
-            {/* <br /> */}
-            {/* <button id="accept">
-                <Link to="activitymap">Accept</Link>
-            </button>
-            <button id="respin" onClick={props.handleSpinClick}>RE-SPIN</button>
-            <br /> */}
-            {/* <button>
-                <Link to="activities">Activities</Link>
-            </button> */}
         </div >
     )
 
@@ -53,19 +39,3 @@ function ActivityWheel(props) {
 
 export default ActivityWheel
 
-
-// stack overflow example of calling multiple functions with one click
-// onClick={() => { func1(); func2();}}>
-// alt idea: write a function that calls two functions an pass that as the one onclick function
-// might be problematic because I need the answer for function one to call function two:
-/*
-possible syntax:
-
-function spinClicks() {
-    function 1: spin wheel, return prize number
-    function 2: getPrizeNum(prizeNum)
-}
-
-
-
-*/

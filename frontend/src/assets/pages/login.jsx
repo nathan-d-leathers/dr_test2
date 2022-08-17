@@ -1,12 +1,9 @@
 import axios from "axios";
-// import Button from 'react-bootstrap/Button'
-// import Form from 'react-bootstrap/Form'
 
-function LogIn(props) {
+function LogIn() {
 
 
     const submitLoginForm = (event) => {
-        // this isn't actually necessary, since this isn't in a form. but if it WAS a form, we'd need to prevent default.
         event.preventDefault()
         axios.post('/login/', {
             'email': event.target[0].value,
@@ -16,7 +13,6 @@ function LogIn(props) {
                 console.log('response from server: ', response)
                 window.location.href = "../#/wheelpage"
                 window.location.reload()
-                // create user seems to work now, but I cant login
             })
     }
 

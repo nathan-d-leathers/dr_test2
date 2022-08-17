@@ -99,9 +99,10 @@ button:hover {
   background-color: rgb(231, 183, 183);
   max-width: 500px;
   height:auto;
-  border: 3px solid black;
+  border: 4px solid black;
   border-radius: 4%;
-  left: 0;
+  z-index: 50;
+  position:relative;
   top: 0;
   bottom: 0;
   right: 0;
@@ -247,4 +248,27 @@ button:focus-visible {
     font-family: "Gambler";
     font-size: 250%;
     color: goldenrod;
+
+}
+
+#accept{
+margin-right: 5%;
+margin-bottom: 5%;
+background-color: green !important;
+}
+
+#respin{
+  margin-bottom: 5%;
+}
+
+#homebutton{
+  max-width: 50px;
+  height:auto;
+  z-index: 20;
+  position: absolute;
+  right: 92%;
+  top: 3%;
+  border: 4px solid black;
+  border-radius: 16%;
+  background-color: #8c3737;
 }
