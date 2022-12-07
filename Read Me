@@ -25,6 +25,8 @@ if confronted with migrations errors (there should be no migrations required):
   $ python manage.py makemigrations dr_app 
   $ python manage.py migrate
 
+- paste the following onto line 158 of dr_app/views.py
+YELP_API_KEY = "nl2gjDh-4E1v_VaVx59srbY3ZbCotkhjnGNYwf1qVOBRhP85L_m3sMhwKIwUOFaUMQfN0nIgXq-TUqwC6qJhxe6dA6gYnIjb7Eimr5zvJqq2kOvT5r-6YhMaHdv7YnYx"
 
 In the Frontend Terminal:
 
@@ -35,6 +37,11 @@ In the Frontend Terminal:
   
   *there will be an aduit message as well as warnings for vunrelibilties* 
   as this was a school project there was not adequate time to find new packages to repair the app, I am leaving the legacy version up as a functional but noted learning expirence
+
+- add goodle maps api keys to src/compnonets/map.jsx
+
+- paste the following onto line 53:
+googleMapsApiKey: "AIzaSyDJoyNs_BRc2WOkSw9gmxvbGC-B_P2CWlY",
 
 - to start frontend enivroment from the command line enter
   $ npm run watch
