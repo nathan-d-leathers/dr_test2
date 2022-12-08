@@ -2,11 +2,11 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.core import serializers
 from django.contrib.auth import authenticate, login, logout
-import dotenv
+# import dotenv
 from .models import Activity
 from .models import AppUser as User
 from rest_framework.decorators import api_view
-import googlemaps
+# import googlemaps
 import requests
 # from dotenv import load_dotenv
 # import dotenv
@@ -154,6 +154,8 @@ def yelpAPI(request, activity):
     search = f"term={activity}&latitude=41.879930&longitude=-87.630710&radius=40000&sort_on=popularity&limit=20"
 
     url = base_url + search
+
+    YELP_API_KEY = "nl2gjDh-4E1v_VaVx59srbY3ZbCotkhjnGNYwf1qVOBRhP85L_m3sMhwKIwUOFaUMQfN0nIgXq-TUqwC6qJhxe6dA6gYnIjb7Eimr5zvJqq2kOvT5r-6YhMaHdv7YnYx"
 
     results = {}
     headers = {

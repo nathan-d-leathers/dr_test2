@@ -50,6 +50,7 @@ function Map(props) {
     const { isLoaded, loadError } = useLoadScript({
         // googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
         // -=-= A D D   A P I   K E Y  T 0   B A C K E N D -=-=-=-=
+        googleMapsApiKey: "AIzaSyDJoyNs_BRc2WOkSw9gmxvbGC-B_P2CWlY",
         libraries,
     });
 
